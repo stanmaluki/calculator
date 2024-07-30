@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffdab3;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.screen {
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 2.5em;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    text-align: right;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.calc-button,
+.calc-button-double,
+.calc-button-triple {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.calc-button:hover,
+.calc-button-double:hover,
+.calc-button-triple:hover {
+    background-color: #e0e0e0;
+}
+
+.calc-button:active,
+.calc-button-double:active,
+.calc-button-triple:active {
+    transform: scale(0.95);
+}
+
+.calc-button-double {
+    grid-column: span 2;
+}
+
+.calc-button-triple {
+    grid-column: span 3;
+}
+
+/* Operator buttons */
+.calc-button[data-value="÷"],
+.calc-button[data-value="×"],
+.calc-button[data-value="-"],
+.calc-button[data-value="+"],
+.calc-button[data-value="="] {
+    background-color: #ffa500;
+    color: white;
+}
+
+.calc-button[data-value="÷"]:hover,
+.calc-button[data-value="×"]:hover,
+.calc-button[data-value="-"]:hover,
+.calc-button[data-value="+"]:hover,
+.calc-button[data-value="="]:hover {
+    background-color: #ff8c00;
+}
+
+/* Clear and backspace buttons */
+.calc-button[data-value="C"],
+.calc-button[data-value="←"] {
+    background-color: #d3d3d3;
+}
+
+.calc-button[data-value="C"]:hover,
+.calc-button[data-value="←"]:hover {
+    background-color: #c0c0c0;
+}
+
+/* Adjust specific button positions */
+.calc-button[data-value="0"] {
+    grid-column: span 2;
+}
+
+.calc-button[data-value="-"],
+.calc-button[data-value="+"] {
+    background-color: #4caf50;
+}
+
+.calc-button[data-value="-"]:hover,
+.calc-button[data-value="+"]:hover {
+    background-color: #45a049;
+}
